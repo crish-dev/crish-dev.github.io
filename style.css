@@ -1,0 +1,387 @@
+@import url(https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap);
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'General Sans', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(0, 0, 0), #006e6e);
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.logo span{
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF;
+}
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    font-size: 2rem;
+    display: none;
+}
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #00FFFF;
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #00FFFF;
+    transition: 0.2s linear;
+}
+.nav-container .contact-btn a{
+    color: white;
+    transition: 0.3s linear;
+}
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: #00FFFF;
+    color: white;
+}
+.nav-container .links a:hover{
+    color: #00FFFF;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px white;
+    transition: 0.2s linear;
+}
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover{
+    background-color: #00FFFF;
+}
+section{
+    width: 100%;
+    min-height: 90vh;
+}
+.home-img{
+    border-radius: 50%;
+}
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #00FFFF;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.home .image{
+    z-index: -1;
+    width: 50%;
+}
+.home .image img{
+    width: 100%;
+}
+.home .content{
+    color: white;
+    width: 40%;
+    min-height: 100px;
+}
+.content h1{
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+.content h1 span{
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF;
+}
+.content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+.content .typewriter span{
+    color: #00FFFF;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #00FFFF;
+    position: relative;
+    transition: 0.3s linear;
+}
+.typewriter span::before{
+    content: "Developer";
+    animation: words 15s infinite;
+}
+@keyframes words {
+    0%, 33%{
+        content: "Designer";
+    }
+    34%, 66%{
+        content: "Web Developer";
+    }
+    67%, 100%{
+        content: "Developer";
+    }
+}
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid #00FFFF;
+    border-radius: 50%;
+    color:#00FFFF;
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+.social-links i:hover{
+    scale: 1.3;
+    color: white;
+    background-color: #00FFFF;
+    filter: drop-shadow(0 0 10px rgb(93, 0, 109));
+}
+.content button{
+    width: 40%;
+    height: 6vh;
+    margin: 30px;
+    background-color: #00FFFF;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+.content button:hover{
+ scale: 1.1;
+ color: #00FFFF;
+ border: 2px solid #00FFFF;
+ background-color: transparent;
+ font-weight: 700;
+ box-shadow: 0 0 40px #00FFFF;
+}
+
+/* Hall of Fame Section Styles */
+.hall-of-fame {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    overflow-x: hidden;
+}
+
+.section-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.companies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.company {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    transition: 0.3s all ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(145, 61, 230, 0.3);
+    border: 1px solid rgba(145, 61, 230, 0.5);
+}
+
+.company-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.company-logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: 0.3s all ease;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.company:hover .company-logo img {
+    transform: scale(1.1);
+    filter: brightness(1.2) contrast(1.2) drop-shadow(0 0 10px rgba(145, 61, 230, 0.5));
+}
+
+.company-logo h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media (max-width:884px) {
+    body{
+        overflow-y: visible;
+    }
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-container .links{
+        display: none;
+    }
+    .hamburg,.cancel{
+        display: block;
+    }
+    .home .content{
+        width: 80%;
+    }
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .cancel{
+        color: white;
+    }
+    .home .image{
+        width: 80%;
+        margin-bottom: 0px;
+    }
+    
+    /* Responsive Hall of Fame */
+    .companies-container {
+        width: 90%;
+    }
+    
+    .company {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .company-logo img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .company-logo h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .companies-container {
+        gap: 20px;
+    }
+    
+    .company {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .company-logo img {
+        width: 50px;
+        height: 50px;
+    }
+}
