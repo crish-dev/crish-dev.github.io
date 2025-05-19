@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&display=swap" rel="stylesheet">
@@ -8,8 +9,10 @@
     <link rel="icon" href="favicon.jpg" sizes="any">
     <title>Krish</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -17,58 +20,378 @@
                 <span>Krish</span>
             </div>
             <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about-me">About Me</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="writeups">Writeups</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact-me">Contact Me</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a
+                        href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a
+                        href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a
+                        href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a
+                        href="#contact">Contact</a></div>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
         <div class="dropdown">
             <div class="links">
-                <a href="index">Home</a>
-                <a href="about-me">About Me</a>
-                <a href="writeups">Writeups</a>
-                <a href="contact-me">Contact Me</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
     </nav>
-    <section>
-        <section class="home">
-            <div class="home-img">
-                <img src="images/Main.jpg" alt="">
+
+    <!-- Hero Section -->
+    <section id="home" class="home">
+        <div class="home-img" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="images/Main.jpg" alt="Krish Profile Photo">
+        </div>
+        <div class="content">
+            <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">Hey, I'm <span>Krish</span></h1>
+            <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">I'm a
+                <span></span></div>
+            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">A 16-year-old web developer with a
+                passion for creating sleek, functional, and visually appealing websites. Proficient in HTML and CSS with
+                moderate JavaScript skills. Despite my age, I'm a quick learner who stays updated with the latest web
+                development trends.</p>
+            <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                <a href="https://www.linkedin.com/in/r-krishna-prasath-a3b143349/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.github.com/crish-dev" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/_tokitoooo_" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.x.com/crishna_27" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey,I'm <span>Krish</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></span></div>
-                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">A 16-year-old web designer with a passion for creating sleek, functional, and visually appealing websites.Despite my age, I have developed strong skills in HTML, CSS, JavaScript.Always eager to learn and grow, I stay updated with the latest trends in web design and development.</p>
-                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                    <a href="https://www.linkedin.com/in/r-krishna-prasath-a3b143349/" ><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.github.com/crish-dev"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/_tokitoooo_"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.x.com/crishna_27"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                    <button>Download CV</button>
-                </div>
+            <div class="buttons" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                <button class="primary-btn">Download CV</button>
             </div>
-        </section>
+        </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <h2>About <span>Me</span></h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <h3>Who am I?</h3>
+                <p>
+                    I'm Krish, a passionate 16-year-old web developer with a keen eye for design and functionality.
+                    My journey in web development began with curiosity that quickly transformed into a passion.
+                </p>
+                <p>
+                    At my age, I've already developed strong skills in HTML and CSS, with growing knowledge in
+                    JavaScript.
+                    I take pride in creating websites that are not only visually appealing but also user-friendly and
+                    responsive.
+                </p>
+                <p>
+                    As a quick learner, I'm constantly exploring new technologies and techniques to enhance my
+                    development skills.
+                    My goal is to evolve into a full-stack developer who can build comprehensive web solutions.
+                </p>
+                <div class="personal-info">
+                    <div class="info-item">
+                        <span class="info-title">Name:</span>
+                        <span class="info-value">Krish</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">Age:</span>
+                        <span class="info-value">16 Years</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-title">Email:</span>
+                        <span class="info-value">krishnaprasath.7x@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-boxes" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                <div class="exp-box">
+                    <h3>1+</h3>
+                    <p>Years of<br>Experience</p>
+                </div>
+                <div class="exp-box">
+                    <h3>3+</h3>
+                    <p>Projects<br>Completed</p>
+                </div>
+                <div class="exp-box">
+                    <h3>3+</h3>
+                    <p>Happy<br>Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <h2>My <span>Skills</span></h2>
+            <div class="underline"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skill-category" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <h3>Frontend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>HTML</h4>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>CSS</h4>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <h2>My <span>Projects</span></h2>
+            <div class="underline"></div>
+        </div>
+        <div class="projects-container">
+            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="project-img">
+                    <img src="images/Sibhi.png" alt="Personal Blog Website">
+                </div>
+                <div class="project-info">
+                    <h3>Sibhi Portfolio</h3>
+                    <p>A responsive Portfolio website built with HTML, CSS, and JavaScript featuring Simple Animations Using JavaScript.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://xibhi.github.io" class="project-link"><i class="fa-solid fa-link"></i> Live Demo</a>
+                        <a href="Https://github.com/xibhi/xibhi.github.io" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="project-img">
+                    <img src="images/Secure-Worldz.png" alt="Weather App">
+                </div>
+                <div class="project-info">
+                    <h3>Secure Worldz</h3>
+                    <p>A simple Landing Page for a Comapny Built With HTML, CSS, and JavaScript.</p><br>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://crish-dev.github.io/Secure-worldz/" class="project-link"><i class="fa-solid fa-link"></i> Live Demo</a>
+                        <a href="Https://github.com/crish-dev/Secure-worldz" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Contact <span>Me</span></h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <h3>Let's Connect</h3>
+                <p>Feel free to reach out for collaboration or just a friendly chat about web development!</p>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>krishnaprasath.7x@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 6385392557</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/r-krishna-prasath-a3b143349/" target="_blank"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.github.com/crish-dev" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/_tokitoooo_" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.x.com/crishna_27" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({offset:0});
+        AOS.init({
+            offset: 200,
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
     </script>
     <script>
-        function hamburg(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(0px)"
+        // Mobile Navigation
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
         }
-        function cancel(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(-500px)"
+
+        function cancel() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
         }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (window.innerWidth < 884) {
+                        cancel();
+                    }
+                }
+            });
+        });
+
+        // Let's Talk button scroll to contact
+        function scrollToContact() {
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                window.scrollTo({
+                    top: contactSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission (example - would need backend implementation)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // You would typically send this data to a server
+                alert('Thanks for your message! I\'ll get back to you soon.');
+                contactForm.reset();
+            });
+        }
+         // Function to animate skill bars
+    function animateSkillBars() {
+        const skillprogress = document.querySelectorAll('.skill-progress');
+        
+        skillprogress.forEach(skill => {
+            if (isInViewport(skill) && !skill.classList.contains('animated')) {
+                // Get the width value from the style attribute
+                const width = skill.style.width;
+                
+                // Reset width to 0
+                skill.style.width = '0%';
+                
+                // Add animated class to prevent re-animation
+                skill.classList.add('animated');
+                
+                // Animate to the original width
+                setTimeout(() => {
+                    skill.style.transition = 'width 1s ease-in-out';
+                    skill.style.width = width;
+                }, 50);
+            }
+        });
+    }
+
+    // Initial check on page load
+    animateSkillBars();
+
+    // Check again on scroll
+    window.addEventListener('scroll', animateSkillBars);
     </script>
 </body>
+
 </html>
