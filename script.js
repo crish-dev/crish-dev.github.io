@@ -20,36 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.style.transform = "translateY(-500px)";
     }
 
-    // Function to animate skill bars
-    function animateSkillBars() {
-        const skillprogress = document.querySelectorAll('.skill-progress');
-        
-        skillprogress.forEach(skill => {
-            if (isInViewport(skill) && !skill.classList.contains('animated')) {
-                // Get the width value from the style attribute
-                const width = skill.style.width;
-                
-                // Reset width to 0
-                skill.style.width = '0%';
-                
-                // Add animated class to prevent re-animation
-                skill.classList.add('animated');
-                
-                // Animate to the original width
-                setTimeout(() => {
-                    skill.style.transition = 'width 1s ease-in-out';
-                    skill.style.width = width;
-                }, 50);
-            }
-        });
-    }
-
-    // Initial check on page load
-    animateSkillBars();
-
-    // Check again on scroll
-    window.addEventListener('scroll', animateSkillBars);
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -113,3 +83,86 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Function to animate skill bars when they come into view
+function animateSkillBars() {
+    const skillLevels = document.querySelectorAll('.skill-level');
+    
+    skillLevels.forEach(skillLevel => {
+        if (isInViewport(skillLevel) && !skillLevel.classList.contains('animated')) {
+            // Get the skill percentage from data attribute
+            const skillPercentage = skillLevel.getAttribute('data-skill');
+            
+            // Add animated class to prevent re-animation
+            skillLevel.classList.add('animated');
+            
+            // Animate the width with a slight delay for better effect
+            setTimeout(() => {
+                skillLevel.style.width = skillPercentage + '%';
+            }, 200);
+        }
+    });
+}
+
+// Helper function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Run animation on scroll and initial load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial check
+    setTimeout(animateSkillBars, 500);
+    
+    // Check on scroll
+    window.addEventListener('scroll', throttle(animateSkillBars, 100));
+});
+
+// Throttle function to optimize scroll performance
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Alternative approach using Intersection Observer (more efficient)
+const observeSkillBars = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                const skillLevel = entry.target;
+                const skillPercentage = skillLevel.getAttribute('data-skill');
+                
+                skillLevel.classList.add('animated');
+                
+                setTimeout(() => {
+                    skillLevel.style.width = skillPercentage + '%';
+                }, 300);
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '50px'
+    });
+
+    document.querySelectorAll('.skill-level').forEach(skill => {
+        observer.observe(skill);
+    });
+};
+
+// Use Intersection Observer if supported, fallback to scroll listener
+if (window.IntersectionObserver) {
+    document.addEventListener('DOMContentLoaded', observeSkillBars);
+}
