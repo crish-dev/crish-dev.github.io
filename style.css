@@ -507,7 +507,7 @@ section {
 /* Skills Section */
 .skills {
     padding: 100px 5%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--background-gradient);
+    background: var(--background-gradient);
     position: relative;
 }
 
@@ -947,7 +947,7 @@ section {
 /* Contact Section */
 .contact {
     padding: 100px 5%;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), var(--background-gradient);
+    background: var(--background-gradient);
 }
 
 .contact-container {
