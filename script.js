@@ -43,17 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Let's Talk button scroll to contact
-    window.scrollToContact = function() {
-        const contactSection = document.querySelector('#contact');
-        if (contactSection) {
-            window.scrollTo({
-                top: contactSection.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    }
-
     // Back to top button
     const backToTopButton = document.getElementById('backToTop');
 
